@@ -1,0 +1,39 @@
+//Tarea #3: diseñe una funcion que ordene en orden ascendente un arreglo de enteros
+#include <iostream>
+using namespace std;
+
+void Orden_Array(int *array, int size);
+
+int main ()
+{
+    int array[6]={6, 3, 7, 1, 9, 4}, size=6;
+
+    Orden_Array(array,size);
+
+    for(int i=0; i<size; i++)
+    {
+        cout<<"\n Mostrar ["<<i<<"]: "<<array[i]<<endl;  //Imprimir o mostrar  el areglo ordenado
+    }
+    cout<<"\n"<<endl;
+    return 0;
+}
+
+void Orden_Array(int *array, int size)
+{
+    int cambios;
+
+cout<<"\n"<<endl;
+cout<<"Array_Ordenado: "<<endl;
+    for(int i=0; i<size; i++)
+    {
+        for(int j=0; j<size; j++)
+        {
+            if(array[i]<array[j]) //le indicamos como debe quedar el orden ascendente o desendente
+            {
+                cambios=array[i];
+                array[i]=array[j];
+                array[j]=cambios;     //aqui vamos a ser el recorrido del arreglo para que me cumpla la condicion en este caso
+            }                       //quede en forma ascendente
+        }
+    }
+}
